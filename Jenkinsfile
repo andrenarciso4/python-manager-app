@@ -8,7 +8,7 @@ pipeline {
       CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
     }
     stages {
-      stage('CI Build and push snapshot') {
+      stage('CI Build and push the APP') {
         when {
           branch 'PR-*'
         }
@@ -35,7 +35,7 @@ pipeline {
           }
         }
       }
-      stage('Build Release') {
+      stage('Build Release and run Unit Tests') {
         when {
           branch 'master'
         }
@@ -63,7 +63,7 @@ pipeline {
           }
         }
       }
-      stage('Promote to Environments') {
+      stage('Run integration Tests and deploy the helm Chart') {
         when {
           branch 'master'
         }
