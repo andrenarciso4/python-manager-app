@@ -3,8 +3,8 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: draft
-  tag: dev
+  repository: 10.39.240.70:5000/andrenarciso4/python-manager-app
+  tag: 0.0.4
   pullPolicy: IfNotPresent
 service:
   name: python-manager-app
